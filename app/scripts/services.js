@@ -123,7 +123,7 @@ angular.module('XivelyApp.services', ['ngResource'])
     })
 
     .factory('Flickr', function ($q, $resource, FLICKR_API_KEY) {
-        var baseUrl = 'http://api.flickr.com/services/rest/';
+        var baseUrl = 'https://api.flickr.com/services/rest/';
 
 
         var flickrSearch = $resource(baseUrl, {
@@ -260,8 +260,8 @@ angular.module('XivelyApp.services', ['ngResource'])
                     data.type = 'undefined';
                 }
                 if (data.type != 'undefined') {
-                    data.minDomain = tags.minValue;
-                    data.maxDomain = tags.maxValue;
+                    data.minDomain = tags.min;
+                    data.maxDomain = tags.max;
                     data.minCritical = tags.minCritical;
                     data.maxCritical = tags.maxCritical;
                     data.name = tags.name;
